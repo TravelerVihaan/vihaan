@@ -1,4 +1,6 @@
 package io.github.travelervihaan.posts;
 
-public class PostRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface PostRepository extends MongoRepository<Post, String> {
 }
