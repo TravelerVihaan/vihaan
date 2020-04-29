@@ -1,16 +1,16 @@
 package io.github.travelervihaan.posts;
 
 import io.github.travelervihaan.users.User;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Document
+@Document(collection = "posts")
 public class Post {
 
-    @MongoId
+    @Id
     private String id;
 
     private String title;
@@ -20,9 +20,7 @@ public class Post {
     private User author;
 
     public Post(){}
-
-    public Post(String id, String title, String text, LocalDateTime dateAdded, User author) {
-        this.id = id;
+    public Post(String title, String text, LocalDateTime dateAdded, User author) {
         this.title = title;
         this.text = text;
         this.dateAdded = dateAdded;

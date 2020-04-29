@@ -1,6 +1,28 @@
 package io.github.travelervihaan.users;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import javax.validation.constraints.NotEmpty;
 
-public interface RoleDTO extends MongoRepository<Role, String> {
+public class RoleDTO{
+
+    @NotEmpty
+    private String roleName;
+
+    public RoleDTO(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    @Override
+    public String toString() {
+        return "RoleDTO{" +
+                "roleName='" + roleName + '\'' +
+                '}';
+    }
 }

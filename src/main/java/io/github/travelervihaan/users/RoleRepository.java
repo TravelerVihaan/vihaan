@@ -1,4 +1,6 @@
 package io.github.travelervihaan.users;
 
-public class RoleRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface RoleRepository extends MongoRepository<Role, String> {
 }
